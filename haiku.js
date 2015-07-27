@@ -40,11 +40,10 @@ function getWordBySyl(dictionary, syl) {
 }
 
 function genSylStructure(numSyls) {
-  var syls = [Math.floor(Math.random()*numSyls) + 1];
-  var total = syls[0];
-
+  var syls = [];
+  var total = 0;
   while (total < numSyls) {
-    var newSyl = Math.floor(Math.random()*(numSyls - total)) + 1;
+    var newSyl = Math.ceil(Math.random()*(numSyls - total));
     syls.push(newSyl);
     total += newSyl;
   }
